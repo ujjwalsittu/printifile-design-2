@@ -356,7 +356,7 @@ const PrintifileLanding = () => {
                     {product.price}
                   </p>
                   <div className="space-y-2">
-                    <Button className="w-full bg-indigo-900 hover:bg-indigo-800" size="sm">
+                    <Button className="w-full bg-saffron-600 hover:bg-saffron-500 text-white" size="sm">
                       Customize
                     </Button>
                     <Button variant="outline" className="w-full text-green-600 border-green-200 hover:bg-green-50" size="sm">
