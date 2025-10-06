@@ -1,12 +1,16 @@
-import { useEffect } from "react";
-import "@/App.css";
+import React, { useState, useEffect } from "react";
+import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from "axios";
+import PrintifileLanding from "./components/PrintifileLanding";
+import PrintifileLandingPart2 from "./components/PrintifileLandingPart2";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
 const Home = () => {
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
   const helloWorldApi = async () => {
     try {
       const response = await axios.get(`${API}/`);
@@ -20,19 +24,20 @@ const Home = () => {
     helloWorldApi();
   }, []);
 
+  // Auto-rotate testimonials
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTestimonial((prev) => 
+        (prev + 1) % 3 // mockData.testimonials.length
+      );
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div>
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
+      <PrintifileLanding />
+      <PrintifileLandingPart2 currentTestimonial={currentTestimonial} />
     </div>
   );
 };
