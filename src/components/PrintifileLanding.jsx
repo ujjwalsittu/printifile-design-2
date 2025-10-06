@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { 
-  Award, 
-  Truck, 
-  Palette, 
-  Clock, 
-  Users, 
-  Shield, 
+import React, { useState, useEffect } from "react";
+import {
+  Award,
+  Truck,
+  Palette,
+  Clock,
+  Users,
+  Shield,
   Star,
   ChevronRight,
   Menu,
@@ -16,12 +16,12 @@ import {
   MapPin,
   Instagram,
   Linkedin,
-  Youtube
-} from 'lucide-react';
-import { Button } from './ui/button';
-import { Card, CardContent } from './ui/card';
-import { Badge } from './ui/badge';
-import { mockData } from '../mock';
+  Youtube,
+} from "lucide-react";
+import { Button } from "./ui/button";
+import { Card, CardContent } from "./ui/card";
+import { Badge } from "./ui/badge";
+import { mockData } from "../mock";
 
 const PrintifileLanding = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,21 +30,26 @@ const PrintifileLanding = () => {
   // Auto-rotate testimonials
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentTestimonial((prev) => 
-        (prev + 1) % mockData.testimonials.length
+      setCurrentTestimonial(
+        (prev) => (prev + 1) % mockData.testimonials.length
       );
     }, 5000);
     return () => clearInterval(timer);
   }, []);
 
   const iconMap = {
-    Award, Truck, Palette, Clock, Users, Shield
+    Award,
+    Truck,
+    Palette,
+    Clock,
+    Users,
+    Shield,
   };
 
   const scrollToSection = (href) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
     setIsMenuOpen(false);
   };
@@ -58,9 +63,13 @@ const PrintifileLanding = () => {
             {/* Logo */}
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-br from-indigo-900 to-indigo-700 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm lg:text-base">P</span>
+                <span className="text-white font-bold text-sm lg:text-base">
+                  P
+                </span>
               </div>
-              <span className="text-xl lg:text-2xl font-bold text-gray-900">Printifile</span>
+              <span className="text-xl lg:text-2xl font-bold text-gray-900">
+                Printifile
+              </span>
             </div>
 
             {/* Desktop Navigation */}
@@ -78,7 +87,10 @@ const PrintifileLanding = () => {
 
             {/* Desktop CTAs */}
             <div className="hidden lg:flex items-center space-x-4">
-              <Button variant="outline" className="border-indigo-200 text-indigo-900 hover:bg-indigo-50">
+              <Button
+                variant="outline"
+                className="border-indigo-200 text-indigo-900 hover:bg-indigo-50"
+              >
                 Start Customizing
               </Button>
               <Button className="bg-gradient-to-r from-indigo-900 to-indigo-700 hover:from-indigo-800 hover:to-indigo-600">
@@ -109,7 +121,10 @@ const PrintifileLanding = () => {
                   </button>
                 ))}
                 <div className="flex flex-col space-y-2 pt-4">
-                  <Button variant="outline" className="border-indigo-200 text-indigo-900 hover:bg-indigo-50">
+                  <Button
+                    variant="outline"
+                    className="border-indigo-200 text-indigo-900 hover:bg-indigo-50"
+                  >
                     Start Customizing
                   </Button>
                   <Button className="bg-gradient-to-r from-indigo-900 to-indigo-700 hover:from-indigo-800 hover:to-indigo-600">
@@ -124,17 +139,20 @@ const PrintifileLanding = () => {
 
       {/* WhatsApp Floating Button */}
       <div className="fixed bottom-6 right-6 z-50">
-        <Button 
+        <Button
           size="lg"
           className="rounded-full bg-green-500 hover:bg-green-600 shadow-lg h-14 w-14 p-0"
-          onClick={() => window.open('https://wa.me/+919876543210', '_blank')}
+          onClick={() => window.open("https://wa.me/+917765054874", "_blank")}
         >
           <Phone size={24} />
         </Button>
       </div>
 
       {/* Hero Section */}
-      <section id="home" className="relative bg-gradient-to-br from-gray-50 to-indigo-50 py-12 lg:py-20">
+      <section
+        id="home"
+        className="relative bg-gradient-to-br from-gray-50 to-indigo-50 py-12 lg:py-20"
+      >
         <div className="container mx-auto px-4 lg:px-6">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="space-y-6 lg:space-y-8">
@@ -143,28 +161,29 @@ const PrintifileLanding = () => {
                   🇮🇳 Made in India • Premium Quality
                 </Badge>
                 <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                  Print Your 
+                  Print Your
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-900 to-saffron-600">
-                    {" "}Brand Story
+                    {" "}
+                    Brand Story
                   </span>
                 </h1>
                 <p className="text-lg lg:text-xl text-gray-600 leading-relaxed">
-                  Customizable print solutions for businesses, startups, and creators — 
-                  from visiting cards to complete onboarding kits.
+                  Customizable print solutions for businesses, startups, and
+                  creators — from visiting cards to complete onboarding kits.
                 </p>
               </div>
-              
+
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="bg-gradient-to-r from-indigo-900 to-indigo-700 hover:from-indigo-800 hover:to-indigo-600 h-12"
                 >
                   Start Designing
                   <ArrowRight className="ml-2" size={20} />
                 </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
+                <Button
+                  size="lg"
+                  variant="outline"
                   className="border-indigo-200 text-indigo-900 hover:bg-indigo-50 h-12"
                 >
                   Shop Products
@@ -209,14 +228,15 @@ const PrintifileLanding = () => {
               Featured Categories
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Discover our premium printing solutions designed for modern Indian businesses
+              Discover our premium printing solutions designed for modern Indian
+              businesses
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {mockData.categories.map((category) => (
-              <Card 
-                key={category.id} 
+              <Card
+                key={category.id}
                 className="group cursor-pointer border-0 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden"
               >
                 <div className="relative overflow-hidden">
@@ -226,9 +246,7 @@ const PrintifileLanding = () => {
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <Button 
-                    className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 bg-white text-indigo-900 hover:bg-gray-100"
-                  >
+                  <Button className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 bg-white text-indigo-900 hover:bg-gray-100">
                     Customize Now
                   </Button>
                 </div>
@@ -236,9 +254,7 @@ const PrintifileLanding = () => {
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
                     {category.name}
                   </h3>
-                  <p className="text-gray-600 mb-4">
-                    {category.tagline}
-                  </p>
+                  <p className="text-gray-600 mb-4">{category.tagline}</p>
                   <div className="flex flex-wrap gap-2">
                     {category.products.slice(0, 2).map((product, idx) => (
                       <Badge key={idx} variant="secondary" className="text-xs">
@@ -254,15 +270,22 @@ const PrintifileLanding = () => {
       </section>
 
       {/* Customization Showcase */}
-      <section id="design" className="py-16 lg:py-24 bg-gradient-to-br from-indigo-50 to-gray-50">
+      <section
+        id="design"
+        className="py-16 lg:py-24 bg-gradient-to-br from-indigo-50 to-gray-50"
+      >
         <div className="container mx-auto px-4 lg:px-6">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div className="relative">
               <div className="bg-white rounded-2xl shadow-2xl p-6 transform -rotate-2 hover:rotate-0 transition-transform duration-500">
                 <div className="bg-gray-100 rounded-lg p-4 mb-4">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-medium text-gray-600">Custom Editor</span>
-                    <Badge className="bg-green-100 text-green-800">Live Preview</Badge>
+                    <span className="text-sm font-medium text-gray-600">
+                      Custom Editor
+                    </span>
+                    <Badge className="bg-green-100 text-green-800">
+                      Live Preview
+                    </Badge>
                   </div>
                   <img
                     src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=250&fit=crop"
@@ -279,25 +302,31 @@ const PrintifileLanding = () => {
 
             <div className="space-y-6">
               <h2 className="text-3xl lg:text-5xl font-bold text-gray-900">
-                Your Brand, 
+                Your Brand,
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-900 to-saffron-600">
-                  {" "}Your Way
+                  {" "}
+                  Your Way
                 </span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Choose from 100+ templates or upload your own design. Edit names, logos, 
-                and details in real time before you print. Our intuitive editor makes 
-                professional design accessible to everyone.
+                Choose from 100+ templates or upload your own design. Edit
+                names, logos, and details in real time before you print. Our
+                intuitive editor makes professional design accessible to
+                everyone.
               </p>
-              
+
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
                     <Palette className="text-indigo-900" size={20} />
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">100+ Templates</div>
-                    <div className="text-sm text-gray-600">Professional designs</div>
+                    <div className="font-semibold text-gray-900">
+                      100+ Templates
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      Professional designs
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
@@ -305,14 +334,18 @@ const PrintifileLanding = () => {
                     <Users className="text-saffron-800" size={20} />
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Live Preview</div>
-                    <div className="text-sm text-gray-600">See before you print</div>
+                    <div className="font-semibold text-gray-900">
+                      Live Preview
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      See before you print
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-gradient-to-r from-indigo-900 to-indigo-700 hover:from-indigo-800 hover:to-indigo-600"
               >
                 Try Custom Editor
@@ -337,7 +370,10 @@ const PrintifileLanding = () => {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {mockData.trendingProducts.map((product) => (
-              <Card key={product.id} className="group cursor-pointer border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+              <Card
+                key={product.id}
+                className="group cursor-pointer border-0 shadow-lg hover:shadow-xl transition-all duration-300"
+              >
                 <div className="relative overflow-hidden">
                   <img
                     src={product.image}
@@ -356,10 +392,17 @@ const PrintifileLanding = () => {
                     {product.price}
                   </p>
                   <div className="space-y-2">
-                    <Button className="w-full bg-saffron-600 hover:bg-saffron-500 text-white" size="sm">
+                    <Button
+                      className="w-full bg-saffron-600 hover:bg-saffron-500 text-white"
+                      size="sm"
+                    >
                       Customize
                     </Button>
-                    <Button variant="outline" className="w-full text-green-600 border-green-200 hover:bg-green-50" size="sm">
+                    <Button
+                      variant="outline"
+                      className="w-full text-green-600 border-green-200 hover:bg-green-50"
+                      size="sm"
+                    >
                       Order on WhatsApp
                     </Button>
                   </div>
@@ -371,15 +414,22 @@ const PrintifileLanding = () => {
       </section>
 
       {/* Customization Showcase */}
-      <section id="design" className="py-16 lg:py-24 bg-gradient-to-br from-indigo-50 to-gray-50">
+      <section
+        id="design"
+        className="py-16 lg:py-24 bg-gradient-to-br from-indigo-50 to-gray-50"
+      >
         <div className="container mx-auto px-4 lg:px-6">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div className="relative">
               <div className="bg-white rounded-2xl shadow-2xl p-6 transform -rotate-2 hover:rotate-0 transition-transform duration-500">
                 <div className="bg-gray-100 rounded-lg p-4 mb-4">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-medium text-gray-600">Custom Editor</span>
-                    <Badge className="bg-green-100 text-green-800">Live Preview</Badge>
+                    <span className="text-sm font-medium text-gray-600">
+                      Custom Editor
+                    </span>
+                    <Badge className="bg-green-100 text-green-800">
+                      Live Preview
+                    </Badge>
                   </div>
                   <img
                     src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=250&fit=crop"
@@ -396,25 +446,31 @@ const PrintifileLanding = () => {
 
             <div className="space-y-6">
               <h2 className="text-3xl lg:text-5xl font-bold text-gray-900">
-                Your Brand, 
+                Your Brand,
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-900 to-saffron-600">
-                  {" "}Your Way
+                  {" "}
+                  Your Way
                 </span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Choose from 100+ templates or upload your own design. Edit names, logos, 
-                and details in real time before you print. Our intuitive editor makes 
-                professional design accessible to everyone.
+                Choose from 100+ templates or upload your own design. Edit
+                names, logos, and details in real time before you print. Our
+                intuitive editor makes professional design accessible to
+                everyone.
               </p>
-              
+
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
                     <Palette className="text-indigo-900" size={20} />
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">100+ Templates</div>
-                    <div className="text-sm text-gray-600">Professional designs</div>
+                    <div className="font-semibold text-gray-900">
+                      100+ Templates
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      Professional designs
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
@@ -422,14 +478,18 @@ const PrintifileLanding = () => {
                     <Users className="text-saffron-800" size={20} />
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Live Preview</div>
-                    <div className="text-sm text-gray-600">See before you print</div>
+                    <div className="font-semibold text-gray-900">
+                      Live Preview
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      See before you print
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-saffron-600 hover:bg-saffron-500 text-white"
               >
                 Try Custom Editor
@@ -439,7 +499,6 @@ const PrintifileLanding = () => {
           </div>
         </div>
       </section>
-      
     </div>
   );
 };

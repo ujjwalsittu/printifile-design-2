@@ -1,11 +1,11 @@
-import React from 'react';
-import { 
-  Award, 
-  Truck, 
-  Palette, 
-  Clock, 
-  Users, 
-  Shield, 
+import React from "react";
+import {
+  Award,
+  Truck,
+  Palette,
+  Clock,
+  Users,
+  Shield,
   Star,
   ChevronRight,
   ArrowRight,
@@ -14,23 +14,31 @@ import {
   MapPin,
   Instagram,
   Linkedin,
-  Youtube
-} from 'lucide-react';
-import { Button } from './ui/button';
-import { Card, CardContent } from './ui/card';
-import { Badge } from './ui/badge';
-import { mockData } from '../mock';
+  Youtube,
+} from "lucide-react";
+import { Button } from "./ui/button";
+import { Card, CardContent } from "./ui/card";
+import { Badge } from "./ui/badge";
+import { mockData } from "../mock";
 
 // This component contains the remaining sections of the landing page
 const PrintifileLandingPart2 = ({ currentTestimonial }) => {
   const iconMap = {
-    Award, Truck, Palette, Clock, Users, Shield
+    Award,
+    Truck,
+    Palette,
+    Clock,
+    Users,
+    Shield,
   };
 
   return (
     <>
       {/* Business Printing Solutions */}
-      <section id="business" className="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-indigo-50">
+      <section
+        id="business"
+        className="py-16 lg:py-24 bg-gradient-to-br from-gray-50 to-indigo-50"
+      >
         <div className="container mx-auto px-4 lg:px-6">
           <div className="text-center mb-12 lg:mb-16">
             <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
@@ -43,7 +51,10 @@ const PrintifileLandingPart2 = ({ currentTestimonial }) => {
 
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
             {mockData.businessSolutions.map((solution) => (
-              <Card key={solution.id} className="group border-0 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+              <Card
+                key={solution.id}
+                className="group border-0 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+              >
                 <div className="relative overflow-hidden">
                   <img
                     src={solution.image}
@@ -66,11 +77,19 @@ const PrintifileLandingPart2 = ({ currentTestimonial }) => {
                       {solution.price}
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">Includes:</h4>
+                      <h4 className="font-semibold text-gray-900 mb-2">
+                        Includes:
+                      </h4>
                       <ul className="space-y-1">
                         {solution.includes.map((item, idx) => (
-                          <li key={idx} className="text-sm text-gray-600 flex items-center">
-                            <ChevronRight size={16} className="text-indigo-900 mr-2 flex-shrink-0" />
+                          <li
+                            key={idx}
+                            className="text-sm text-gray-600 flex items-center"
+                          >
+                            <ChevronRight
+                              size={16}
+                              className="text-indigo-900 mr-2 flex-shrink-0"
+                            />
                             {item}
                           </li>
                         ))}
@@ -103,8 +122,8 @@ const PrintifileLandingPart2 = ({ currentTestimonial }) => {
             {mockData.features.map((feature, idx) => {
               const Icon = iconMap[feature.icon];
               return (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className="group text-center p-6 rounded-2xl hover:bg-gradient-to-br hover:from-indigo-50 hover:to-gray-50 transition-all duration-300 transform hover:-translate-y-1"
                 >
                   <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-indigo-100 to-saffron-100 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -145,8 +164,8 @@ const PrintifileLandingPart2 = ({ currentTestimonial }) => {
                         key={i}
                         className={`w-6 h-6 ${
                           i < mockData.testimonials[currentTestimonial].rating
-                            ? 'text-saffron-500 fill-current'
-                            : 'text-gray-300'
+                            ? "text-saffron-500 fill-current"
+                            : "text-gray-300"
                         }`}
                       />
                     ))}
@@ -179,9 +198,7 @@ const PrintifileLandingPart2 = ({ currentTestimonial }) => {
                 <button
                   key={idx}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    idx === currentTestimonial 
-                      ? 'bg-white' 
-                      : 'bg-indigo-400'
+                    idx === currentTestimonial ? "bg-white" : "bg-indigo-400"
                   }`}
                 />
               ))}
@@ -193,9 +210,12 @@ const PrintifileLandingPart2 = ({ currentTestimonial }) => {
       {/* Final CTA Banner */}
       <section className="py-16 lg:py-24 bg-gradient-to-br from-saffron-500 to-saffron-400 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <div className="w-full h-full" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-          }}></div>
+          <div
+            className="w-full h-full"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            }}
+          ></div>
         </div>
         <div className="container mx-auto px-4 lg:px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
@@ -203,22 +223,25 @@ const PrintifileLandingPart2 = ({ currentTestimonial }) => {
               Bring Your Ideas to Life in Print
             </h2>
             <p className="text-lg lg:text-xl text-white/90 mb-8 leading-relaxed">
-              Join thousands of Indian businesses who trust Printifile for their branding needs. 
-              Start creating professional materials that make an impact.
+              Join thousands of Indian businesses who trust Printifile for their
+              branding needs. Start creating professional materials that make an
+              impact.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-white text-saffron-600 hover:bg-gray-100 h-14 px-8 text-lg font-semibold"
               >
                 Start Customizing
                 <ArrowRight className="ml-2" size={20} />
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-white text-white hover:bg-white/10 h-14 px-8 text-lg font-semibold"
-                onClick={() => window.open('https://wa.me/+919876543210', '_blank')}
+              <Button
+                size="lg"
+                variant="outline"
+                className="bg-gradient-to-t from-blue/60 to-transparent text-black hover:bg-black/10 h-14 px-8 text-lg font-semibold"
+                onClick={() =>
+                  window.open("https://wa.me/+917765054874", "_blank")
+                }
               >
                 <Phone className="mr-2" size={20} />
                 Talk on WhatsApp
@@ -241,13 +264,15 @@ const PrintifileLandingPart2 = ({ currentTestimonial }) => {
                 <span className="text-2xl font-bold">Printifile</span>
               </div>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                India's premier print-on-demand platform, helping businesses create 
-                professional branded materials with ease and excellence.
+                India's premier print-on-demand platform, helping businesses
+                create professional branded materials with ease and excellence.
               </p>
-              
+
               {/* Newsletter */}
               <div className="space-y-4">
-                <h4 className="font-semibold text-lg">Get design inspiration & offers</h4>
+                <h4 className="font-semibold text-lg">
+                  Get design inspiration & offers
+                </h4>
                 <div className="flex">
                   <input
                     type="email"
@@ -267,7 +292,10 @@ const PrintifileLandingPart2 = ({ currentTestimonial }) => {
               <ul className="space-y-2">
                 {mockData.footerLinks.products.map((item, idx) => (
                   <li key={idx}>
-                    <a href="#" className="text-gray-300 hover:text-white transition-colors duration-200">
+                    <a
+                      href="#"
+                      className="text-gray-300 hover:text-white transition-colors duration-200"
+                    >
                       {item}
                     </a>
                   </li>
@@ -281,7 +309,10 @@ const PrintifileLandingPart2 = ({ currentTestimonial }) => {
               <ul className="space-y-2">
                 {mockData.footerLinks.services.map((item, idx) => (
                   <li key={idx}>
-                    <a href="#" className="text-gray-300 hover:text-white transition-colors duration-200">
+                    <a
+                      href="#"
+                      className="text-gray-300 hover:text-white transition-colors duration-200"
+                    >
                       {item}
                     </a>
                   </li>
@@ -295,7 +326,10 @@ const PrintifileLandingPart2 = ({ currentTestimonial }) => {
               <ul className="space-y-2 mb-6">
                 {mockData.footerLinks.support.slice(0, 3).map((item, idx) => (
                   <li key={idx}>
-                    <a href="#" className="text-gray-300 hover:text-white transition-colors duration-200">
+                    <a
+                      href="#"
+                      className="text-gray-300 hover:text-white transition-colors duration-200"
+                    >
                       {item}
                     </a>
                   </li>
@@ -306,11 +340,11 @@ const PrintifileLandingPart2 = ({ currentTestimonial }) => {
               <div className="space-y-2">
                 <div className="flex items-center space-x-2 text-gray-300">
                   <Phone size={16} />
-                  <span>+91 98765 43210</span>
+                  <span>+91 7765054874</span>
                 </div>
                 <div className="flex items-center space-x-2 text-gray-300">
                   <Mail size={16} />
-                  <span>hello@printifile.com</span>
+                  <span>hello@printifile.in</span>
                 </div>
                 <div className="flex items-center space-x-2 text-gray-300">
                   <MapPin size={16} />
@@ -327,13 +361,22 @@ const PrintifileLandingPart2 = ({ currentTestimonial }) => {
                 © 2025 Printifile. All rights reserved.
               </div>
               <div className="flex items-center space-x-6">
-                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                >
                   <Instagram size={20} />
                 </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                >
                   <Linkedin size={20} />
                 </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                >
                   <Youtube size={20} />
                 </a>
               </div>
