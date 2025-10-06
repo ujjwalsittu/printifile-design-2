@@ -370,7 +370,75 @@ const PrintifileLanding = () => {
         </div>
       </section>
 
-      {/* Continue with other sections in the next part... */}
+      {/* Customization Showcase */}
+      <section id="design" className="py-16 lg:py-24 bg-gradient-to-br from-indigo-50 to-gray-50">
+        <div className="container mx-auto px-4 lg:px-6">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div className="relative">
+              <div className="bg-white rounded-2xl shadow-2xl p-6 transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+                <div className="bg-gray-100 rounded-lg p-4 mb-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm font-medium text-gray-600">Custom Editor</span>
+                    <Badge className="bg-green-100 text-green-800">Live Preview</Badge>
+                  </div>
+                  <img
+                    src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=250&fit=crop"
+                    alt="Custom editor interface"
+                    className="w-full rounded-lg"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <div className="h-3 bg-gray-200 rounded w-3/4"></div>
+                  <div className="h-3 bg-gray-200 rounded w-1/2"></div>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <h2 className="text-3xl lg:text-5xl font-bold text-gray-900">
+                Your Brand, 
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-900 to-saffron-600">
+                  {" "}Your Way
+                </span>
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Choose from 100+ templates or upload your own design. Edit names, logos, 
+                and details in real time before you print. Our intuitive editor makes 
+                professional design accessible to everyone.
+              </p>
+              
+              <div className="grid grid-cols-2 gap-4">
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
+                    <Palette className="text-indigo-900" size={20} />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-900">100+ Templates</div>
+                    <div className="text-sm text-gray-600">Professional designs</div>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 bg-saffron-100 rounded-lg flex items-center justify-center">
+                    <Users className="text-saffron-800" size={20} />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-900">Live Preview</div>
+                    <div className="text-sm text-gray-600">See before you print</div>
+                  </div>
+                </div>
+              </div>
+
+              <Button 
+                size="lg" 
+                className="bg-saffron-600 hover:bg-saffron-500 text-white"
+              >
+                Try Custom Editor
+                <ArrowRight className="ml-2" size={20} />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
       
     </div>
   );
